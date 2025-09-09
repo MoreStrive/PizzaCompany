@@ -1,0 +1,212 @@
+// Button
+.ant-btn {
+    &.ant-btn-primary {
+        &:focus {
+            @apply bg-primary-100;
+        }
+    }
+    &.ant-btn-background-ghost {
+        &:focus {
+            @apply text-primary-100 border-primary-100;
+        }
+    }
+    &.ant-btn-green {
+        @apply bg-success-100 text-white;
+    }
+    @apply font-medium flex justify-center items-center gap-2;
+    &-loading {
+        i:not(.anticon-loading) {
+            @apply hidden;
+        }
+        .anticon-loading {
+            @apply relative;
+            top: -3px;
+            right: 4px;
+        }
+    }
+}
+
+// Table
+.ant-table {
+    &-thead {
+        th {
+            @apply text-gray-100 !font-medium !py-4 bg-[#E9EBF4] !important;
+        }
+    }
+    .ant-table-tbody {
+        .ant-table-row-selected td {
+            @apply !bg-white;
+        }
+    }
+    .ant-table-scroll {
+        .ant-table-body::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .ant-table-body::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+        }
+
+        .ant-table-body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #CCCECC;
+        }
+
+        td {
+            @apply !border-primary-10;
+        }
+    }
+    &-wrapper {
+        @apply overflow-auto;
+    }
+    &-row {
+        @apply bg-white;
+    } 
+}
+
+// Breadcrumb 
+.ant-breadcrumb {
+    @apply !font-normal;
+    &-link {
+        .nuxt-link-exact-active {
+            @apply !text-primary-100 font-medium;
+        }
+    }
+}
+
+// Form
+.ant-form {
+    .ant-form-item {
+        @apply mb-2;
+        &-label {
+            @apply text-gray-100 font-medium !important;
+            &>.ant-form-item-required {
+                &::before {
+                    content: none;
+                }
+                &::after {
+                    content: '*';
+                    @apply inline-block ml-1 text-danger-100 text-lg leading-4;
+                }
+            }
+        }
+    }
+}
+
+// Modal
+.ant-modal-wrap {
+    .ant-modal {
+        max-width: 95vw;
+        &-title {
+            @apply font-semibold text-3xl;
+        }
+        &-header {
+            @apply border-b-0 pb-0;
+        }
+        &-footer {
+            @apply border-t-0 pt-0 p-6;
+        }
+        &-close-icon {
+            &:hover {
+                @apply scale-105 duration-100;
+            }
+            svg {
+                @apply fill-danger-80;
+            }
+            @apply bg-danger-20 p-2 rounded-full overflow-hidden relative top-4 right-2;
+        }
+    }
+}
+
+// Select {
+.ant-select {
+    .ant-select-arrow-icon {
+        line-height: 1 !important;
+    }
+    &-open {
+        .ant-select-arrow-icon {
+            @apply rotate-180 duration-200;
+        }
+    }
+}
+
+// Message
+.ant-message-notice-content {
+    &>div {
+        i {
+            @apply relative;
+            top: -1px !important;
+        }
+        @apply flex items-center;
+    }
+}
+
+// Pagination
+.ant-pagination {
+    @apply flex justify-center items-center;
+}
+
+// Tag
+.ant-tag {
+    @apply !mr-0 px-4 py-1 rounded-md;
+    &-green {
+        @apply text-success-100 border-success-100 bg-success-10;
+    }
+    &-red {
+        @apply text-danger-80 border-danger-80 bg-danger-10;
+    }
+}
+
+// Dropdown
+.ant-dropdown-trigger {
+    &button {
+        @apply !mr-0;
+    }
+}
+
+// Menu
+.ant-menu {
+    &.ant-menu-inline-collapsed {
+        @apply !w-60 !p-0 !border-0;
+        li {
+            @apply !px-6;
+        }
+        i {
+            @apply !mr-3;
+        }
+    } 
+    .ant-menu-item, .ant-menu-submenu-title {
+        @apply mx-0 !pl-6 rounded-md !border-0;
+        &-disabled {
+            @apply !text-gray-40;
+        }
+        &-selected {
+            @apply bg-primary-10 text-primary-100 font-medium;
+            &::after {
+                @apply hidden !border-0;
+            }
+        }
+    }
+    .ant-menu-submenu-title, .ant-menu-item {
+        @apply !pl-4;
+    }
+    &-inline {
+        @apply !border-0;
+    }
+}
+
+// dateRange
+.ant-calendar-picker {
+    @apply w-full;
+    .ant-calendar-range-picker-separator {
+        @apply leading-8;
+    }
+}
+.ant-calendar-footer-extra {
+    span {
+        @apply !mr-2;
+    }
+}

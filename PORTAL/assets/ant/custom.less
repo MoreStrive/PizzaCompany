@@ -1,0 +1,240 @@
+// Header
+.ant-page-header {
+    @apply p-0;
+    &-heading-title {
+        @apply text-3xl text-primary-100;
+    }
+    &-heading-sub-title {
+        @apply text-gray-60;
+    }
+    &-back-button {
+        @apply flex items-center !important;
+    }
+}
+
+// Table
+.ant-table {
+    &-thead {
+        th {
+            @apply text-gray-100 !font-medium !py-4 bg-[#E9EBF4] !important;
+        }
+    }
+    .ant-table-tbody {
+        .ant-table-row-selected td {
+            @apply !bg-white;
+        }
+    }
+    .ant-table-scroll {
+        .ant-table-body::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .ant-table-body::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+        }
+
+        .ant-table-body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #CCCECC;
+        }
+
+        td {
+            @apply !border-primary-10;
+        }
+    }
+    &-wrapper {
+        @apply overflow-auto;
+    }
+    &-row {
+        @apply bg-white;
+    } 
+}
+
+// Tag
+.ant-tag {
+    @apply inline-flex items-center justify-center px-4 py-1 text-center;
+
+    &.tag-primary-100 {
+        @apply text-primary-100 border-primary-100 bg-primary-10;
+    }
+}
+
+// Dropdown
+.ant-dropdown {
+    .ant-dropdown-menu {
+        @apply py-0;
+    }
+    .ant-dropdown-menu-item {
+        @apply px-4 border-b border-b-gray-5;
+
+        &:last-child {
+            @apply border-b-0;
+        }
+
+        &:hover {
+            @apply bg-primary-5;
+        }
+    }
+}
+
+// Form
+.ant-form {
+    .ant-form-item {
+        @apply mb-0 !important;
+        &-label {
+            @apply text-gray-80 leading-7 !important;
+            &>.ant-form-item-required {
+                &::before {
+                    content: none;
+                }
+                &::after {
+                    content: '(*)';
+                    @apply inline-block ml-1 text-red-100 leading-4;
+                }
+            }
+        }
+        .ant-form-explain {
+            font-size: 12px;
+        }
+    }
+}
+
+// Input
+.ant-input, .ant-input-number, .ant-input-number-input {
+    &-disabled {
+        @apply !text-gray-100 !bg-white;
+    }
+}
+
+// Date range
+.ant-calendar-picker {
+    @apply flex;
+    &>div {
+        @apply w-full;
+    }
+    .ant-calendar-range-picker-input {
+        width: 90px;
+    }
+    .ant-calendar-picker-input {
+        @apply overflow-y-hidden;
+    }
+    .ant-calendar-range-picker-separator {
+        vertical-align: initial;
+    }
+}
+
+// Message
+.ant-message-custom-content {
+    @apply flex items-center;
+}
+
+//Select
+
+.ant-select {
+    &-disabled {
+        .ant-select-arrow-icon {
+            @apply hidden;
+        }
+        .ant-select-selection {
+            @apply !text-gray-100 !bg-[#eaeaea];
+            &__choice {
+                @apply !text-gray-100;
+            }
+        }
+    }
+    &.border-0 {
+        .ant-select-selection {
+            @apply !border-0;
+        }
+    }
+    &-dropdown-menu-item {
+        &-selected{
+            @apply bg-primary-10;
+        }
+        &:hover:not(.ant-select-dropdown-menu-item-disabled) {
+            @apply bg-primary-10;
+        }
+    }
+}
+
+// Alert
+.ant-alert {
+    &-message {
+        @apply text-gray-80;
+    }
+}
+
+// Dialog
+.ant-modal-wrap {
+    .ant-modal {
+        max-width: 95vw;
+        &-title {
+            @apply font-semibold text-3xl;
+        }
+        &-header {
+            @apply border-b-0 pb-0;
+        }
+        &-footer {
+            @apply border-t-0 pt-0 p-6;
+        }
+        &-close-icon {
+            &:hover {
+                @apply scale-105 duration-100;
+            }
+            svg {
+                @apply fill-danger-80;
+            }
+            @apply bg-danger-20 p-2 rounded-full overflow-hidden relative top-4 right-2;
+        }
+    }
+}
+
+// Tab
+.ant-tabs {
+    &.disable-ink-bar {
+        .ant-tabs-bar {
+            @apply border-b-0 mb-0;
+        }
+        .ant-tabs-ink-bar {
+            display: none !important;
+        }
+    }
+}
+
+// Button
+.ant-btn {
+    &.ant-btn-background-ghost {
+        @apply border;
+    }
+
+    &.ct-button-white {
+        @apply !bg-white border-white hover:border-primary-100;
+
+        &[disable] {
+            @apply hover:border-white;
+        }
+    }
+
+    .anticon-loading {
+        top: -3px;
+        right: 5px;
+        @apply relative;
+    }
+}
+
+// Pagination
+.ant-pagination {
+    &-item {
+        @apply border-primary-90;
+    }
+}
+
+// Calendar
+.ant-fullcalendar {
+    &-date {
+        height: 100px;
+    }
+}

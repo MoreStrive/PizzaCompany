@@ -1,0 +1,54 @@
+/* eslint-disable import/first */
+require('module-alias/register');
+import express from 'express';
+import compression from 'compression';
+import session from 'express-session';
+import cors from 'cors';
+import routes from '@configs/routes';
+import Settings from '@configs/settings';
+import strongParams from '@middlewares/parameters';
+import { sequelize } from './models';
+
+// import './scripts/createAdminRoot';
+
+const port = process.env.PORT || 8000;
+
+const app = express();
+app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true,
+}));
+
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: Settings.sessionSecret,
+}));
+
+app.use(cors());
+app.options('*', cors());
+app.use(strongParams());
+
+app.use('/api', routes);
+
+app.use((req, res) => {
+  res.status(404).send({ url: `${req.path} not found` });
+});
+
+const startServer = async () => {
+  try {
+    await sequelize.authenticate();
+    // await sequelize.sync({ alter: true });
+    await sequelize.sync();
+    console.log('All models were synchronized successfully.');
+
+    app.listen(port, () => {
+      console.log(`App is running localhost:${port}`);
+      console.log('  Press CTRL-C to stop\n');
+    });
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+};
+startServer();

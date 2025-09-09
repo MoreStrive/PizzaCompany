@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './transitions.scss';
+@import './transitions.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif !important;
+    @apply text-base text-gray-100 #{!important};
+}
+
+.app {
+    min-height: 100vh;
+}
+
+a {
+    color: inherit !important;
+}
+
+.text-lobster {
+    font-family: "Lobster", sans-serif !important;
+}
+
+@keyframes acrossIn {
+    0% {
+        transform: translate3d(-5%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.shadow-light {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inject-html {
+    table {
+        td {
+            @apply border border-gray-20;
+        }
+    }
+}
+
+.fc {
+    .fc-toolbar {
+        &-title {
+            @apply text-primary-100 font-semibold uppercase text-xl #{!important};
+        }
+        button {
+            @apply bg-blue-100 border-blue-100 #{!important};
+        }
+    }
+}
+
+ul {
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.ant-form {
+    @apply w-full;
+    .ant-form-item-control-wrapper {
+        @apply w-full
+    }
+    .ant-input-affix-wrapper .ant-input:not(:first-child) {
+        padding: 15px 10px 15px 40px;
+    }
+    .ant-input {
+        @apply h-12
+    }
+    .ant-form-item {
+        @apply mb-8
+    }
+}
+
+/* scroll style */
+::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #CCCECC;
+    @apply  transition-all duration-300;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    @apply bg-primary-100;
+}
+
+.container {
+    @apply mx-auto px-5 xl:px-10 2xl:px-28;
+}
+
+input {
+    @apply outline-none;
+}
+.ant-radio-inner::after {
+    background-color: #000 !important;
+}
+.ant-radio-checked::after {
+    border: 2px solid #000 !important;
+}
+.ant-modal-mask  {
+    @apply z-[998] #{!important};
+}
+.ant-modal-wrap {
+    @apply z-[999]  #{!important};
+}
+
+input {
+    @apply w-full border-gray-40 border transition-all border-solid focus:border-primary-100 outline-none focus:outline-none bg-white  #{!important};
+}
+button {
+    @apply focus:outline-none outline-none z-[0] #{!important};
+}
+.ant-select {
+    .ant-select-search__field {
+        @apply border-none outline-none bg-transparent focus:border-none focus:border-transparent #{!important};
+    }
+}
+.ant-radio-wrapper {
+    span {
+        @apply whitespace-normal sm:whitespace-nowrap #{!important};
+    }
+}
+.has-error  {
+    .ant-input {
+        @apply border-[#FF6A77] #{!important};
+    }
+}
+
+.ant-form-explain {
+    @apply absolute -bottom-6 text-xs #{!important};
+}
+.ant-form-item {
+    @apply mb-6 #{!important};
+}
+.ant-input {
+    @apply disabled:bg-gray-20 rounded-lg text-sm font-normal h-11 px-4 py-3 #{!important};
+}
+.ant-form-item-label {
+    @apply leading-[30px] #{!important};
+}
+
+.sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+}
+
+span.ant-calendar-picker-input.ant-input {
+    display: flex !important;
+    width: 300px;
+    max-width: 90vh;
+}
+.ant-calendar-range-picker-input {
+    border: none !important;
+}
+.ant-popover {
+    @apply z-10 #{!important};
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    @apply bg-white p-3 rounded-sm;
+}
